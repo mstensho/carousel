@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<style>
+  .carousel {
+    position: relative;
+    display: grid;
+    height: 300px;
+    grid-template:
+      'previous scroller next' 1fr
+      '. markers .' auto
+      / auto 1fr auto;
+
+    & li {
+      flow-into: carousel-contents;
+    }
+
+    /* The scroller itself.
+       Weird use of ::before? Could also add an additional DIV to establish the
+       region, but I suppose part of the exercise here is to avoid that. */
+    &::before {
+      display: block;
+      flow-from: carousel-contents;
+      grid-area: scroller;
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      overscroll-behavior-x: contain;
+      container-type: size;
+      height: 100%;
+      columns: 1;
+      position: relative;
+      text-align: center;
+
+      &::scroll-left-button, &::scroll-right-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid;
+        align-self: center;
+        position: absolute;
+        z-index: 1;
+      }
+      &::scroll-left-button {
+        grid-area: previous;
+        content: '<';
+        left: 0;
+      }
+
+      &::scroll-right-button {
+        grid-area: next;
+        content: '>';
+        right: 0;
+      }
+
+      &::fragment {
+        scroll-snap-align: center;
+
+        /* A "scroll marker". */
+        &::before {
+          content: "";
+          cursor: pointer;
+          flow-into: my-scroll-markers;
+          width: 1em;
+          height: 1em;
+          margin: 3px;
+          border-radius: 100%;
+          border: 2px solid #777;
+          background: transparent content-box;
+          &:checked {
+            background: SelectedItem content-box;
+          }
+          &:focus {
+            border-color: Highlight;
+          }
+        }
+      }
+    }
+
+    /* The "scroll marker group".
+       Similarly weird use of ::after */
+    &::after {
+      flow-from: my-scroll-markers;
+      grid-area: markers;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+<p>Alternative to https://flackr.github.io/carousel/examples/carousel/image/
+  using CSS regions instead. Doesn't work. Just some ideas.</p>
+
+<ul class="carousel">
+  <li tabindex="0"><figure><img src="images/loc1.jpg"><figcaption>Item 1</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc2.jpg"><figcaption>Item 2</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc3.jpg"><figcaption>Item 3</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc4.jpg"><figcaption>Item 4</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc5.jpg"><figcaption>Item 5</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc6.jpg"><figcaption>Item 6</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc7.jpg"><figcaption>Item 7</figcaption></figure></li>
+  <li tabindex="0"><figure><img src="images/loc1.jpg"><figcaption>Item 8</figcaption></figure></li>
+</ul>
