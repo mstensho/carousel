@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .sc {
+    overflow: auto;
+    height: 100vh;
+    scroll-marker-group: after;
+  }
+
+  .sc::scroll-marker-group {
+    overflow: auto;
+    position: fixed;
+    display: block;
+    contain: size;
+    width: 10em;
+    height: 50vh;
+    background: #eee;
+    border: 2px solid;
+    border-radius: 4px;
+    opacity: 0.85;
+    box-shadow: 10px 10px 10px;
+    right: 25px;
+    bottom: 40px;
+  }
+
+  section::before {
+    display: block;
+    font-size: 1.7em;
+    font-weight: bold;
+    content: attr(title);
+    margin-bottom: .5em;
+  }
+
+  section::scroll-marker {
+    cursor: grab;
+    font-family: sans-serif;
+    display: block;
+    content: attr(title);
+    border: solid 1px;
+    border-radius: 2px;
+    margin: 3px;
+    padding: 2px;
+    background: #ccc;
+  }
+  section:hover::scroll-marker {
+    font-weight: bold;
+  }
+</style>
+<div id="sc" class="sc">
+  <div>
+    <section title="Introduction">
+      <p>Bacon ipsum dolor amet pork loin venison sirloin hamburger short loin
+        biltong. Spare ribs landjaeger turducken short loin. Strip steak fatback
+        alcatra jowl, sirloin corned beef shoulder short ribs flank burgdoggen
+        filet mignon cupim pancetta shank. Turkey strip steak tenderloin,
+        fatback chislic tail pig frankfurter pork loin tongue filet mignon
+        biltong pancetta capicola pork belly. Chicken alcatra turducken biltong
+        beef. Jowl bresaola ribeye, rump chuck pastrami shoulder prosciutto
+        biltong shank pork chop pork belly sirloin turducken.</p>
+    </section>
+
+    <section title="Chapter 1">
+      <p>Kielbasa turducken pork belly, capicola cupim pork loin fatback
+        leberkas pork chop pork. Alcatra doner sausage, andouille kielbasa
+        turducken venison t-bone short ribs boudin strip steak bacon. T-bone
+        kevin tongue venison short loin rump shank shoulder, flank shankle spare
+        ribs beef. Ham ball tip jowl beef picanha shoulder. Filet mignon
+        hamburger meatball chislic. Pork landjaeger ground round venison chislic
+        ribeye frankfurter pastrami shankle burgdoggen chicken prosciutto
+        bresaola fatback.</p>
+    </section>
+
+    <section title="Chapter 2">
+      <p>Cow cupim rump shankle, t-bone fatback salami pork loin tongue leberkas
+        beef ribs meatloaf. Salami andouille pork belly capicola. Tongue
+        bresaola kielbasa brisket, beef ribs chuck filet mignon drumstick
+        t-bone. Chislic shank frankfurter cow. Landjaeger turducken jerky,
+        capicola hamburger tri-tip pig tongue shoulder filet mignon doner cow
+        meatloaf flank turkey.</p>
+
+      <p>Bresaola pork chop sirloin shoulder pig venison. Beef ribs capicola
+        brisket venison pork chop shankle bresaola leberkas. Cupim leberkas
+        venison shoulder doner spare ribs boudin strip steak. Shankle venison
+        biltong beef tenderloin fatback.</p>
+
+      <p>Swine biltong filet mignon, tail rump corned beef brisket andouille
+        flank venison hamburger kielbasa. Short ribs pancetta pork chop chislic,
+        venison beef pork loin jerky. Ground round t-bone tri-tip buffalo shank
+        short loin, kielbasa bacon frankfurter beef ribs meatloaf beef. Short
+        loin beef brisket chislic spare ribs turducken. Kevin ball tip boudin
+        fatback. Spare ribs swine meatball t-bone tail brisket shank pork.</p>
+
+      <p>Venison t-bone landjaeger tail drumstick, filet mignon burgdoggen
+        buffalo swine spare ribs corned beef rump salami ham beef ribs. Salami
+        shankle pancetta spare ribs pork loin cupim pork belly fatback andouille
+        chislic jowl bacon. Kevin bresaola rump, salami pork loin spare ribs
+        tenderloin strip steak shank. Short ribs swine alcatra, t-bone pork loin
+        boudin kielbasa ham hock picanha landjaeger tri-tip beef ribs leberkas
+        fatback pig. Leberkas frankfurter kevin ground round ribeye ham meatball
+        pancetta ham hock pork loin chislic buffalo shoulder. Tail kevin boudin
+        bresaola ground round prosciutto flank sirloin pork chop.</p>
+
+      <p>Hamburger brisket fatback beef ribs porchetta pork chop buffalo chicken
+        boudin tongue t-bone tail shoulder. Andouille chislic pastrami ham hock
+        turkey filet mignon beef ribs biltong pancetta pork loin cupim alcatra
+        meatloaf. Pork belly pork loin strip steak turducken, cupim turkey chislic
+        shank venison drumstick bacon flank prosciutto. Pork cupim sausage
+        drumstick, prosciutto pork chop capicola pancetta shank chuck boudin
+        landjaeger shankle. Turducken burgdoggen biltong drumstick ball tip
+        meatloaf kielbasa. Shank pork belly andouille brisket chislic ribeye.</p>
+    </section>
+
+    <section title="Chapter 3">
+      <p>Brisket buffalo t-bone prosciutto, jowl picanha rump pork capicola
+        flank fatback ball tip turkey swine. Ground round sausage boudin strip
+        steak tri-tip fatback turkey. Turkey flank ground round pork tenderloin,
+        prosciutto burgdoggen pork loin. Pastrami short loin jerky short ribs
+        ground round, pancetta tongue burgdoggen. Picanha swine tri-tip cupim
+        kielbasa pork beef ribs corned beef.</p>
+    </section>
+
+    <section title="Chapter 4">
+      <p>Chicken jerky corned beef tongue, venison rump short ribs burgdoggen
+        bresaola. Pork loin filet mignon flank chicken turducken tail
+        sirloin. Filet mignon t-bone swine, beef ribs short ribs chicken pork
+        belly tenderloin burgdoggen brisket fatback bacon pastrami pork loin
+        andouille. Sausage cow andouille pastrami shank ground round. Kielbasa
+        capicola pork chop, salami t-bone meatloaf shankle biltong beef ribs
+        sirloin jowl.</p>
+    </section>
+
+    <section title="Chapter 5">
+      <p>Sirloin kevin ball tip salami ham hock pig spare ribs alcatra tail
+        t-bone. Beef ribs pork belly cupim tri-tip rump cow beef shoulder
+        tenderloin ham hock ground round. Strip steak kielbasa ball tip
+        shoulder, ribeye turducken tenderloin. Tail chislic kevin capicola shank
+        porchetta. Chicken meatball jowl pork loin burgdoggen cupim cow tri-tip
+        shoulder. Frankfurter biltong beef tail, beef ribs pork chop salami
+        chislic pork belly pork pig. Pork chop venison boudin, cow sirloin
+        shankle kielbasa ham hock short ribs pancetta.</p>
+    </section>
+
+    <section title="Chapter 6">
+      <p>Sirloin kevin ball tip salami ham hock pig spare ribs alcatra tail
+        t-bone. Beef ribs pork belly cupim tri-tip rump cow beef shoulder
+        tenderloin ham hock ground round. Strip steak kielbasa ball tip
+        shoulder, ribeye turducken tenderloin. Tail chislic kevin capicola shank
+        porchetta. Chicken meatball jowl pork loin burgdoggen cupim cow tri-tip
+        shoulder. Frankfurter biltong beef tail, beef ribs pork chop salami
+        chislic pork belly pork pig. Pork chop venison boudin, cow sirloin
+        shankle kielbasa ham hock short ribs pancetta.</p>
+    </section>
+
+    <section title="This chapter has an extremely long name">
+      <p>Sirloin kevin ball tip salami ham hock pig spare ribs alcatra tail
+        t-bone. Beef ribs pork belly cupim tri-tip rump cow beef shoulder
+        tenderloin ham hock ground round. Strip steak kielbasa ball tip
+        shoulder, ribeye turducken tenderloin. Tail chislic kevin capicola shank
+        porchetta. Chicken meatball jowl pork loin burgdoggen cupim cow tri-tip
+        shoulder. Frankfurter biltong beef tail, beef ribs pork chop salami
+        chislic pork belly pork pig. Pork chop venison boudin, cow sirloin
+        shankle kielbasa ham hock short ribs pancetta.</p>
+    </section>
+
+    <section title="Conclusion">
+      <ul>
+        <li>Never trust a man in a blue trench coat</li>
+        <li>Never drive a car when you're dead</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<script>
+  document.querySelectorAll("section").forEach(elm => {
+    elm.addEventListener("click", (e) => {
+      let rect = e.currentTarget.getBoundingClientRect();
+      sc.scrollTo(rect.left + sc.scrollLeft, rect.top + sc.scrollTop);
+    });
+  });
+</script>
